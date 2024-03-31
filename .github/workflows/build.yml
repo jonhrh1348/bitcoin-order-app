@@ -40,9 +40,13 @@ jobs:
         run: |
           npm run build --force
       - name: Lint
-        run: ng lint
+        run: |
+          npm run lint
+          ng lint
       - name: Audit 
-        run: npm audit fix
+        run: |
+          npm audit
+          npm audit fix
 
       - name: Update types to latest
         run: |
