@@ -39,6 +39,8 @@ jobs:
       - name: Build
         run: |
           npm run build --force
+      - name: Install Angular CLI and dependencies
+        run: npm install -g @angular/cli@16.2.10
       - name: Lint
         run: |
           npm run lint
