@@ -44,10 +44,10 @@ jobs:
       - name: Lint
         run: |
           npm run lint
+          ng add @angular-eslint/schematics
           ng lint
       - name: Audit 
         run: |
-          npm audit
           npm audit fix
 
       - name: Update types to latest
