@@ -41,7 +41,11 @@ jobs:
           npm run build --force
       - name: Lint
         run: |
-          npm run lint
+          ng lint
+      - name: Audit 
+        run: |
+          npm audit fix
+
       - name: Update types to latest
         run: |
           npm install --save-dev @types/node@latest --force
@@ -67,3 +71,6 @@ jobs:
       - name: Deploy
         run: |
           npm run deploy
+      - name: delete branch
+        run: |
+          git push origin :githubcicd 
