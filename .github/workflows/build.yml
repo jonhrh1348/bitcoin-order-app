@@ -39,17 +39,9 @@ jobs:
       - name: Build
         run: |
           npm run build --force
-      - name: Install Angular CLI and dependencies
-        run: npm install -g @angular/cli@16.2.10
       - name: Lint
         run: |
           npm run lint
-          ng add @angular-eslint/schematics --skip-confirmation
-          ng lint
-      - name: Audit 
-        run: |
-          npm audit fix
-
       - name: Update types to latest
         run: |
           npm install --save-dev @types/node@latest --force
@@ -75,6 +67,3 @@ jobs:
       - name: Deploy
         run: |
           npm run deploy
-      - name: delete branch
-        run: |
-          git push origin :githubcicd 
